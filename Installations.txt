@@ -1,0 +1,99 @@
+Maven Installation
+=================
+Step 1) Install JDK and Add ‘JAVA_HOME’ Environment Variable
+To install java, download JDK installer and add/update the JAVA_HOME variable to JDK install folder.
+Set_java_home_in_windows
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
+
+Step 2) Download Maven and add ‘MAVEN_HOME’ and ‘M2_HOME’ Environment Variables
+Maven can be downloaded from this location.
+https://maven.apache.org/download.cgi
+ I have extracted it in location – D:/Latest Setup/apache-maven-3.0.4. You can choose your own location.
+
+set_maven_home
+Step 3) Include ‘maven/bin’ directory in ‘PATH’ variable
+To run maven from command prompt, this is necessary. Update the PATH variable with 'Maven-installation/bin' directory.
+Set the M2_HOME and MAVEN_HOME variable to maven installation folder.
+MAVEN_HOME=D:\software\apache-maven-3.6.3-bin\apache-maven-3.6.3\
+
+set_maven_path_variable
+--optional because .m2 is in the default location
+
+Step 4) Verify maven in console
+Maven installation is complete. Now lets test it from windows command prompt.
+
+Go to start menu and type cmd in application location search box.
+Press ENTER. A new command prompt will be opened.
+Type mvn -version in command prompt and hit ENTER.
+Console
+$ mvn -version
+--------------------------------------------------------------------------
+Jenkins Installation
+
+Install Java Version 8 – Jenkins is a Java based application, hence Java is a must.
+Install Apache Tomcat Version 9 – Tomcat is required to deploy Jenkins war file.
+Download Jenkins war File – This war is required to install Jenkins.
+Deploy Jenkins war File – Jenkins war file needs to be deployed using Tomcat to run Jenkins.
+Install Suggested Plugins – Install a list of plugins suggested by Jenkins.
+or 
+
+Step 1 : Download Jenkins war file - https://jenkins.io/
+https://updates.jenkins-ci.org/download/war/
+
+Step 2 : Place the war file into any location on your system
+Step 3 : goto command prompt (windows) | terminal (mac)
+   - goto folder where jenkins.war is
+   - java -jar jenkins.war
+--to run jenkins on another port
+java -jar jenkins.war --httpPort=9090
+
+Step 4 : goto browser - http://localhost:8080 (Jenkins window should show up)
+Step 5 : install required plugins
+Step 6 : get started with Jenkins 
+
+Note: By default Jenkins runs at port 8080. To run jenkins on a different port.
+Use the following command at command prompt:
+
+--Method 1: Run Jenkins in a standalone mode
+java -jar jenkins.war --httpPort=9090
+
+user name : admin
+copy the password from console of java server
+
+c:\users\username\.jenkins\secrets\initialAdminPassword
+change the default password using configire option of the logged in user.
+-------------------------------------------------------------------------
+There are two ways of starting Jenkins Server
+--Method 1: Run Jenkins in a standalone mode[java 8,11]
+java -jar jenkins.war  --> def port 8080
+java -jar jenkins.war --httpPort=9090
+
+Note:use Method 2 if your JDK version not supported
+--Method 2:Running via a web Server like Tomcat
+  --All versions
+download 
+https://tomcat.apache.org/download-90.cgi
+
+--Move to the extracted folder
+D:\software\apache-tomcat-9.0.19\webapps
+--copy the jenkins.war in the webapps folder
+--start the tomcat server, it also starts the jenkins application
+D:\software\apache-tomcat-9.0.19\bin>startup
+http://localhost:8081/jenkins
+
+------------------------------------------------------------------
+Git Installation
+https://git-scm.com/download/win
+
+run through the ex
+--verify
+C:\Users\Chaya Nikam>git --version
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
